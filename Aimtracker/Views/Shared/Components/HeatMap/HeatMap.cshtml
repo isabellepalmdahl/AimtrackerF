@@ -1,0 +1,25 @@
+﻿<div id="heatmapInfo">
+    <div id="heatmapContainer">
+
+    </div>
+        <div id="heatmapColorContainer">
+            <span>High Concentration</span>
+            <div id="heatmapColorExplain">
+
+            </div>
+            <span>Low Concentration</span>
+        </div>
+</div>
+<div id="heatmapController">
+    <div>
+        <label for="heatmapPrecision">Precision</label>
+        <input id="heatmapPrecision" type="range" min="0" max="5" value="2" oninput="updateHeatmap()" />
+        <label for="heatmapColor">Color</label>
+        <input id="heatmapColor" type="range" min="10" max="360" value="240" oninput="updateHeatmapColor(this)" />
+    </div>
+</div>
+<script>
+    createCanvas(512);
+    generateHeatMap(2,sessionData,"Sessions");
+
+</script>

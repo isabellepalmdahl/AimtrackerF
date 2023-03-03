@@ -1,0 +1,36 @@
+﻿
+
+header{
+    margin-top: 1rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0rem 0rem 1rem 1rem;
+    box-shadow: 0rem 1rem 1rem 0.1rem rgba(0,0,0,0.05);
+    display: flex;
+}
+
+.login-header-container {
+    width:75%;
+    max-width:575px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+}
+
+header img {
+    Width: 5rem;
+}
+
+.login-header-container div {
+    width: 5rem;
+    Height: 5rem;
+}
+
+.nav-item{
+    float: right;
+}

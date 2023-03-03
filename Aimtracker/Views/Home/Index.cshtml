@@ -1,0 +1,69 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@{
+    ViewData["Title"] = "Home Page";
+}
+@model SessionViewModel
+<html>
+
+<head>
+
+    <meta name="referrer" content="strict-origin" />
+    <script src="https://use.fontawesome.com/5c59f3783f.js"></script>
+    <script src="~/js/GraphicDropdown.js"></script>
+</head>
+
+<partial name="~/Views/Shared/SideMenu.cshtml" />
+<body>
+
+
+    <h1 class="headerpresentation">@localizer["Your summary"]</h1>
+
+    <div class="dropdown">
+        <label> @localizer["Choose timeframe"] </label>
+        <select>
+            <option value="week">
+                @localizer["1 week"]
+            </option>
+            <option value="week">
+                @localizer["1 week"]
+            </option>
+            <option value="month">
+                @localizer["1 month"]
+            </option>
+            <option value="year">
+                @localizer["1 year"]
+            </option>
+        </select>
+    </div>
+   
+        <div class="boxcontainer">
+            <div class="overviewstats">
+               <h3 class="overviewstatheadline">@localizer["Hit statistics"]</h3>
+               <span id="hitStatPercent">@Model.HitStatPrChange% @localizer["change"]</span>
+               <h1 class="overviewstatvalue" id="hit-statistics">@Model.HitStatistic%</h1>
+               <div class="overviewcornerstats">
+                   <h3 class="overviewvs" id="hit-statisticsVS">vs. @Model.HitStatisticVS%</h3>
+                   <p class="overviewtimespan vsstatistics">@localizer["last week"]</p>
+               </div>
+            </div>
+            <div class="overviewstats" id="noSess">
+                <h3 class="overviewstatheadline">@localizer["Number of sessions"]</h3>
+                <span id="sessionsPercent">@Model.SessionsPrChange% @localizer["change"]</span>
+                <h1 class="overviewstatvalue" id="numberOfSessions">@Model.Sessions.Count()</h1>
+                <div class="overviewcornerstats">
+                    <h3 class="overviewvs" id="numberOfSessionsVS">vs. @Model.SessionsVS.Count()</h3>
+                    <p class="overviewtimespan vsstatistics">@localizer["last week"]</p>
+                </div>
+            </div>
+        </div>
+
+<div id="sessionstableandchart">
+    <div id="sessionstable">
+        <partial name="~/Views/Shared/Components/Sessions/Sessions.cshtml" />
+    </div>
+    <div id="chart">
+        <partial name="~/Views/Shared/_Chart.cshtml" />
+    </div>
+</div>
+</body>
+</html>

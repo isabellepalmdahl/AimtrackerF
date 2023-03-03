@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Aimtracker</title>
+    <link rel="icon" href="~/images/aimtracklogo.png"/>
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
+    <script src="https://use.fontawesome.com/5c59f3783f.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="~/js/Chart.js"></script>
+    <script src="~/js/HeatMap.js"></script>
+    <script src="~/js/ReadMoreLess.js"></script>
+    <script src="https://kit.fontawesome.com/57d618d0a2.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+    <script src="~/js/dropdown.js"></script>
+    <script src="https://use.fontawesome.com/5c59f3783f.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

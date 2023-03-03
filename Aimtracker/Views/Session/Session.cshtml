@@ -1,0 +1,108 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@model SessionViewModel
+<div id="session-container">
+    <partial name="~/Views/Shared/SideMenu.cshtml" />
+
+    <div>
+        <h2>@localizer["Session"]</h2>
+
+        <table class="sessionInfo">
+            <tr class="sessionInfo-labels">
+                <td>@localizer["Date"]</td>
+                <td>@localizer["Location"]</td>
+                <td>@localizer["Hit statistics"]</td>
+            </tr>
+
+            <tr>
+                <td>
+                    @if (Model.Session != null)
+                    {@Model.Session.Date}
+                else { Html.Raw("No Date"); }
+                </td> 
+                <td>@Model.Session?.Location?.Name</td>
+                <td>@Model.Session?.HitStatistic %</td> 
+
+            </tr>
+        </table>
+
+        <div class="seriescontainer">
+            <div class="leftsessiondiv">
+                <h3>@localizer["Series"]</h3>
+                <partial name="~/Views/Shared/Components/Sessions/Series.cshtml" />
+            </div>
+
+            <div class="rightsessiondiv">
+                <h3 class="shotH3">@localizer["Shot"]</h3>
+
+                <div class="boxsession" id="aimmovement">
+                    <h3 class="aimmovementh3">@localizer["Aim movement"]</h3>
+                    <img class="sessionimg" id="aimmovementimg" src="/images/aimmovement.png" /> 
+                </div>
+
+                <div class="boxsession" id="timeinterval">
+                    <h3 class="timeintervalh3">@localizer["Time interval"]</h3>
+                    <img class="sessionsimg" id="timeintervalimg" src="/images/timeinterval.png" /> 
+                </div>
+
+                <div class="boxsession" id="pulse">
+                    <h3 class="pulseh3">@localizer["Heartrate"]</h3>
+                    <div class="pulseDiv">
+                        <img class="sessionsimg" id="pulseimg" src="/images/heart-pulse.png" /> 
+                        <h2 class="bpmnumberh2" id="pulseBpm"></h2>
+                    </div>
+                </div>
+
+                <div class="boxsession" id="weather">
+                    <h3 class="weatherh3">@localizer["Weather"]</h3>
+                        <table class="weatherTable">
+                            <tr>
+                                <td id="weatherDesc"></td>
+                                <td>
+                                    <img id="weatherIcon" /></td>
+                            </tr>
+                            <tr>
+                                <td>@localizer["Temperature"]:</td>
+                                <td id="temp"> </td>
+                            </tr>
+                            <tr>
+                                <td>@localizer["Wind speed"]:</td>
+                                <td>
+                                    <div class="compass">
+                                        <div class="direction">
+                                            <p class="compassP" id="windspeed"><span class="compassSpan">mph</span></p>
+                                        </div>
+                                        <div id="arrow" style="transform: rotate(180deg)"></div>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                </div>
+
+                <div class="boxsession" id="factors">
+                    <h3 class="factorsh3">@localizer["Factors"]</h3>
+                </div>
+
+                <div class="boxsession" id="Comments">
+                    <h3 class="commentsh3">@localizer["Comments"]</h3>
+                        @if (Model.Session.Comments != null)
+                        {
+                            <input type="text" id="comment" name="comment" value="@Model.Session.Comments">
+
+                        }
+                        else
+                        {
+                            <input type="text" id="comment" name="comment"/>
+                        }
+                        <input type="hidden" name="ShootingId" id="shootid" value="@Model.Session.ShootingId" />
+
+                        <button class="showMoreLessBtn" id="commentbtn" onclick="addComment()">filter</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/js/session.js"></script>
+<script src="https://use.fontawesome.com/5c59f3783f.js"></script>
+<script>ChangeButton()</script>
+

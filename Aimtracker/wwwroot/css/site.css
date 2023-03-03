@@ -1,0 +1,804 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+
+/*--------------- LOG IN ------------------------------------------- */
+
+.btn-login {
+    border: none;
+    background: #386890;
+    color: white;
+    border-radius: 1em;
+    padding: 1rem;
+    min-width: 100px;
+    margin-top: 2em;
+    margin-right: 1em;
+    max-width: 200px;
+    align-self: center;
+    margin-left: 12px;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-btn-container {
+    display: flex;
+    justify-content: center;
+}
+
+#loginForm {
+    display: flex;
+    justify-content: center;
+}
+
+.login-align {
+    width: 75%;
+    max-width: 575px;
+    display: flex;
+    flex-direction: column;
+}
+
+.login-heading {
+    text-align: center;
+    margin-top: 3rem;
+}
+/*-------------------NAV BAR--------------------------------
+*/
+
+.clickable-tr {
+    cursor: pointer;
+}
+/* Navbar */
+a.navbar-brand {
+    white-space: normal;
+    text-align: center;
+    word-break: break-all;
+}
+
+#series-table td {
+    padding: 1rem 0rem 1rem 0rem;
+    min-width: 75px;
+    text-align: center;
+    border-bottom: solid 5px white;
+}
+
+.series-info-div {
+    max-width: 50%;
+}
+
+#session-container {
+    display: flex;
+    flex-direction: row;
+}
+/* The sidebar menu */
+.profilepic {
+    width: 90%;
+    height: auto;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50%;
+}
+
+.username {
+    text-align: center;
+    margin-top: 15px;
+    color: white;
+    margin-bottom: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.aimtrackerlogo {
+    width: 50%;
+    height: auto;
+    bottom: 20px;
+    position: absolute;
+    margin-left: 25%;
+}
+
+#sidemenuitems {
+    display: flex;
+    flex-direction: column;
+}
+
+#sidemenubuttons {
+    align-self: center;
+}
+
+.headerpresentation {
+    padding: 15px 0px 0px 0px;
+}
+/*language select*/
+#requestCulture_RequestCulture_UICulture_Name {
+    width: 100%;
+    border-radius: 0.5em;
+    background-color: #386890;
+    border: none;
+    color: white;
+    margin-left: -1px;
+    max-width: 96px;
+    padding: 0.25rem;
+    outline: none;
+}
+
+    #requestCulture_RequestCulture_UICulture_Name:focus {
+        border-radius: 15px 15px 0px 0px;
+    }
+
+    #requestCulture_RequestCulture_UICulture_Name option {
+        background-color: white;
+        color: black;
+    }
+
+
+
+.sidenav {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 250px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background: linear-gradient(160deg, #559CBA, white);    
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+    /* The navigation menu links */
+    .sidenav a {
+        padding: 6px 12px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: white;
+        display: block;
+        text-transform: uppercase;
+        text-align: right;
+    }
+
+        /* When you mouse over the navigation links, change their color */
+        .sidenav a:hover {
+            color: #386890;
+            text-decoration: none;
+        }
+
+/* On smaller screens, where height is less than 450px, change the style of the sidebar (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+    .sidenav {
+        padding-top: 15px;
+    }
+
+        .sidenav a {
+            font-size: 18px;
+        }
+}
+
+/*---------- MAIN --------------------------------------------------------*/
+/* Style page content */
+main {
+    padding: 0px 10px;
+    padding-bottom: 100px;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+    font-style: italic;
+    font-weight: bold;
+    color: #386890;
+}
+
+/*--------------- OVERVIEW -------------------------------------*/
+
+/*-------- DROP DOWN OVERVIEW --------------------------------------------------- */
+
+/* The container must be positioned relative: */
+.dropdown {
+    position: relative;
+    font-family: Arial;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+    .dropdown select {
+        display: none; /*hide original SELECT element: */
+    }
+
+.select-selected {
+    background-color: #386890;
+    border-radius: 15px;
+}
+
+    /* Style the arrow inside the select element: */
+    .select-selected:after {
+        position: absolute;
+        content: "";
+        top: 14px;
+        right: 10px;
+        width: 0;
+        height: 0;
+        border: 6px solid transparent;
+        border-color: #fff transparent transparent transparent;
+    }
+
+    /* Point the arrow upwards when the select box is open (active): */
+    .select-selected.select-arrow-active:after {
+        border-color: transparent transparent #fff transparent;
+        top: 7px;
+    }
+
+/* style the items (options), including the selected item: */
+.select-items div, .select-selected {
+    color: #ffffff;
+    padding: 8px 16px;
+    border: 1px solid transparent;
+    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+    cursor: pointer;
+}
+
+/* Style items (options): */
+.select-items {
+    position: absolute;
+    background-color: #4682B4;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+/* Hide the items when the select box is closed: */
+.select-hide {
+    display: none;
+}
+
+.select-items div:hover, .same-as-selected {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.boxcontainer {
+    display: flex;
+    position: relative;
+    padding: 10px 0px 10px 0px;
+    justify-content: space-evenly;
+}
+/*Overview statboxes*/
+.overviewstats {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 25px;
+    vertical-align: middle;
+    width: 50%;
+    height: auto;
+    background-color: #88BACF;
+    margin-right: 20px;
+    padding: 1rem 0.5rem 0rem 0.5rem;
+    box-shadow: 5px 5px 5px 1px #88BACF80;
+}
+
+#hitStatPercent {
+    align-content: end;
+}
+
+#noSess {
+    margin-right: 0px;
+}
+
+.overviewstatheadline {
+    font-size: 20px;
+    color: white;
+}
+
+.overviewstatvalue {
+    padding-top: 0.5rem;
+    font-size: 50px;
+}
+
+.overviewcornerstats {
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.overviewvs {
+}
+
+
+.overviewtimespan {
+    color: white;
+}
+
+.lastweektextsessions {
+    color: white;
+}
+
+.seriescontainer {
+    display: flex;
+}
+
+.sessionInfo {
+    margin-bottom: 20px;
+}
+
+.sessionInfo-labels {
+    font-weight: bold;
+}
+
+
+.leftsessiondiv {
+    float: left;
+}
+
+.sessionimages {
+    width: 30%;
+    height: auto;
+}
+
+#rightsessiondiv {
+    display: flex;
+    flex-flow: wrap;
+}
+
+.aimmovementh3, .timeintervalh3, .pulseh3, .factorsh3, .commentsh3 {
+    font-size: 20px;
+}
+
+.boxsession {
+    float: right;
+    display: flex;
+    flex-flow: row wrap;
+    border-radius: 10px;
+    padding: 1rem 1rem;
+    vertical-align: middle;
+    width: 45%;
+    text-align: left;
+    background-color: #88BACF;
+    padding: 10px;
+    height: 250px;
+    margin-left: 15px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    box-shadow: 5px 5px 5px 1px #88BACF80;
+}
+
+div#aimmovement.boxsession, div#timeinterval.boxsession {
+    background-color: transparent;
+    border: 1px solid #88BACF50;
+}
+
+#aimmovement, #weather, #timeinterval, #pulse {
+    visibility: hidden;
+}
+
+div#weather.boxsession h3 {
+    font-size: 20px;
+}
+
+.shotH3 {
+    margin-left: 35px;
+}
+
+#windarrowimg {
+    width: auto;
+    height: 25%;
+    margin-top: 25px;
+}
+
+.windtext {
+    padding: 10px;
+}
+
+.bpmnumberh2 {
+    position: relative;
+    top: 15%;
+    left: 20%;
+    font-style: normal;
+    color: white;
+}
+
+.pulseDiv {
+    display: flex;
+    flex-direction: column;
+}
+
+.pulseh3 {
+    right: 24%;
+}
+
+.pulseh3, .weatherh3, .factorsh3, .commentsh3 {
+    color: white;
+}
+
+#pulseimg {
+    width: 20%;
+    height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#timeintervalimg {
+    width: 90%;
+    height: auto;
+    border-radius: 25px;
+}
+
+#aimmovementimg {
+    width: 90%;
+    height: auto;
+    border-radius: 25px;
+}
+
+
+#sessionstableandchart {
+    display: flex;
+    justify-content: space-between;
+}
+
+#sessionstable {
+    width: 50%;
+    margin-right: 1rem;    
+}
+
+#chart {
+    width: 50%;
+    margin-left: 1rem;
+}
+
+
+div#Comments.boxsession {
+    display: inline-block;
+}
+
+
+.commenttd {
+}
+
+    .commenttd::after {
+        content: attr(data-hover);
+        padding: 0.5rem;
+        background: #dddddd;
+        border-radius: 1rem;
+        margin-top: -0.5rem;
+        margin-left: 0.5rem;
+        box-shadow: 0px 0px 16px 2px rgba(0,0,0,0.3);
+        display: none;
+        max-width: 150px;
+        word-wrap: break-word;
+        position: absolute;
+    }
+
+    .commenttd:hover::after {
+        display: inline;
+    }
+
+.weatherTable {
+    text-align: center;
+    font-weight: bold;
+}
+
+#weatherIcon {
+    height: 50px;
+    object-fit:none;
+}
+
+/* ----------------- TABLE SESSION & OVERVIEW ----------------------------------*/
+table {
+    font-family: arial, sans-serif;
+    border: none;
+    width: 100%;
+}
+
+    table tr:last-child td:first-child {
+        border-bottom-left-radius: 10px;
+    }
+
+    table tr:last-child td:last-child {
+        border-bottom-right-radius: 10px;
+    }
+
+    table tr:first-child td:first-child {
+        border-top-left-radius: 10px;
+    }
+
+    table tr:first-child td:last-child {
+        border-top-right-radius: 10px;
+    }
+
+tr {
+    transition: background-color 0.25s;
+    background-color: #88BACF50;
+    
+}
+
+td, th {
+    text-align: left;
+    padding: 8px;
+}
+
+.trhoverable:hover {
+    background-color: #88BACF;
+}
+
+
+
+.stance-picture {
+    width: 5px;
+    height: auto;
+}
+
+
+/* Provide sufficient contrast against white background */
+a {
+    color: #0366d6;
+    font-family: 'Roboto', sans-serif;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+
+/* --------------STICKY FOOTER -------------------------------------------------- */
+html {
+    font-size: 14px;
+}
+
+@media screen and (max-width:1100px) {
+    .seriescontainer {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.border-top {
+    border-top: 1px solid #e5e5e5;
+}
+
+.border-bottom {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.box-shadow {
+    box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05);
+}
+
+button.accept-policy {
+    font-size: 1rem;
+    line-height: inherit;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+.container{
+    
+}
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+/*Filter View*/
+#filtercontainer {
+    display: flex;
+    width: 100%;
+    flex-direction:column;
+}
+
+    #filtercontainer #form {
+        display: flex;
+        flex-direction: column;
+        background-color: #88BACF;
+        padding: 2rem;
+        width: 100%;
+        border-radius: 2rem;
+    }
+
+#formcontainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+}
+
+#filtercontainer #form div h3 {
+    font-size: 14pt;
+}
+
+#filtercontainer #form div h4 {
+    font-size: 10pt;
+}
+
+.filteroptionscontainer {
+    display: flex;
+    flex-direction: column !important;
+    padding: 1rem;
+}
+
+    .filteroptionscontainer div {
+        display: flex;
+        flex-direction: column;
+    }
+
+.inputdiv {
+    display: flex;
+    flex-direction: row !important;
+}
+
+.filteroptionscontainer input[type="text"] {
+    width: 50%;
+    max-width: 100px;
+    height: 25px;
+}
+
+.filteroptionscontainer label {
+    font-size: 10pt;
+}
+
+#locationcontainer {
+    display: flex;
+    flex-direction: column !important;
+}
+
+    #locationcontainer select {
+        width: 50% !important;
+        min-width: 100px;
+    }
+
+#filtercontainer button {
+    border: none;
+    border-radius: 2rem;
+    background-color: #dddddd;
+    transition: background-color 0.5s;
+}
+
+    #filtercontainer button:hover {
+        background-color: gray;
+    }
+
+#factorscontainer input[type="range"] {
+    width: 70%;
+    margin: 0rem 0.5rem 0rem 0.5rem;
+}
+
+#selectposition {
+    display: flex;
+    flex-direction: row;
+    font-size: 8pt;
+}
+#visualContainer{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    margin-top:2rem;
+}
+
+/* --------------WIND DEGREE -------------------------------------------------- */
+
+
+.compass {
+    display: block;
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .85);
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #555;
+    text-shadow: 1px 1px 1px white;
+}
+compass:before {
+    font-weight: bold;
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+    top: -2px;
+}
+.direction {
+    height: 100%;
+    width: 100%;
+    display: block;
+    background: #f2f6f5;
+    background: -moz-linear-gradient(top, #f2f6f5 0%, #cbd5d6 100%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f2f6f5), color-stop(100%, #cbd5d6));
+    background: -webkit-linear-gradient(top, #f2f6f5 0%, #cbd5d6 100%);
+    background: -o-linear-gradient(top, #f2f6f5 0%, #cbd5d6 100%);
+    border-radius: 100%;
+}
+.compassP {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 57%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 80px;
+    display: block;
+    margin-top: -45px;
+    font-size: 22px;
+    font-weight: bold;
+}
+.compassSpan {
+    display: block;
+    line-height: normal;
+    margin-top: -14px;
+    font-size: 9px;
+    text-transform: uppercase;
+    font-weight: normal;
+}
+
+
+#arrow {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+}
+#arrow:after {
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 20px solid red;
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    margin-left: -5px;
+    z-index: 99;
+}
+
+
+#showMore {
+    width: 100%;
+    height: auto;
+    max-height:400px;
+    overflow: hidden;
+    border-radius: 1rem;
+    transition: max-height 1s ease-in-out;
+}
+.showMoreLessBtn {
+    border: none;
+    background: #386890;
+    color: white;
+    border-radius: 0.5em;
+    padding: 0.25rem;
+    min-width: 100px;
+    margin: 0.5rem;
+}
+#showMoreLessBtns{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+}
+#chart h2{
+    text-align:center;
+}
+.shotBorder{
+    background-color:lightgray;
+}
+#heatmapColorContainer{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    text-align:center;
+}
+#heatmapInfo {
+    display: flex;
+    align-items: center;
+}

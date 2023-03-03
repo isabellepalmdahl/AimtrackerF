@@ -1,0 +1,38 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@model SessionViewModel
+<table id="series-table">
+    
+    @if (Model.Session != null && Model.Session.Results != null)
+     {
+        int counter = 1; 
+        foreach (var series in Model.Session.Results)
+        {
+            <tr class="trhoverable">
+                <td id="serie-number">@counter<input type="hidden" class="weatherId" value="@series.WeatherId" /></td>              
+                @foreach (var shot in series.Shots)
+                 {
+                    @if (shot.Result == false)
+                     {
+                        <td class="shotCell" ><i onclick="giveBorder(this)" class="fa-solid fa-circle"></i>
+                            <input type="hidden" class="shotHr" value="@shot.HeartRate" />
+                        </td>
+                     }
+                    @if (shot.Result == true)
+                     {
+                        <td class="shotCell"><i onclick="giveBorder(this)" class="fa-regular fa-circle"></i><input type="hidden" class="shotHr" value="@shot.HeartRate" /></td>
+                     }                
+                 }    
+           @if (series.Stance == "Standing")
+            {
+                <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+            }
+
+           @if (series.Stance == "Prone")
+            {
+                <td><i class="fa-solid fa-ellipsis"></i></td>
+            } 
+            </tr>
+            counter++;
+        }
+     }
+</table>

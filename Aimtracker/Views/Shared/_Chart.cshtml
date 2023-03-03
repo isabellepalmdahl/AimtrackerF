@@ -1,0 +1,33 @@
+﻿@model SessionViewModel
+
+<div>
+    <canvas id="sessionchart"></canvas>
+</div>
+
+<script>
+    let monthWithShootings = [];
+    @foreach(var shooting in Model.MonthlyShootings)
+    {
+        @:monthWithShootings.push(@shooting);
+    }
+    data.datasets[0].data = monthWithShootings;
+    const sessionChart = new Chart(
+        document.getElementById('sessionchart'),
+        config,  
+    );
+</script>
+
+<div class="GraphDropdown">
+    <form name="formChart" id="formChart">
+        <select name="statistics" id="statistics">
+            <option value="">
+                Select statistic
+            </option>
+        </select>
+        <select name="years" id="years" onchange="getOptions()">
+            <option value="">
+                Please select statistic first
+            </option>
+        </select>
+    </form>
+</div>

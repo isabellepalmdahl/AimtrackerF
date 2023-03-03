@@ -1,0 +1,36 @@
+@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@model SessionViewModel
+<h2>@localizer["Sessions"]</h2>
+
+<script src="https://use.fontawesome.com/5c59f3783f.js"></script>
+<div id="showMore">
+    <table id="sessions">
+        <tr id="sessions-th">
+            <th>@localizer["Date"]</th>
+            <th>@localizer["Hitstatistic"]</th>
+            <th><i class="fa-regular fa-comment"></i></th>
+        </tr>
+        @if (Model.Sessions != null)
+        {
+            foreach (var session in Model.Sessions)
+            {
+                <tr class="clickable-tr trhoverable" onclick="@("window.location.href='" + @Url.Action("Session", "Session", new { id = session.ShootingId }) + "'");">
+                    <td>@session.Date</td>
+                    <td>@session.HitStatistic%</td>
+                    @if (session.Comments != null)
+                    {
+                        <td class="commenttd" data-hover="@session?.Comments"><i class="fa-solid fa-comment"></i></td>
+                    }
+                    else
+                    {
+                        <td></td>
+                    }
+                </tr>
+            }
+        }
+    </table>
+</div>
+<div id="showMoreLessBtns">
+    <button class="showMoreLessBtn" type="button" onclick="addHeight()">Show More</button>
+    <button class="showMoreLessBtn" type="button" onclick="collapseHeight()">Show Less</button>
+</div>

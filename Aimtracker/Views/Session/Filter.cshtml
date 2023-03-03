@@ -1,0 +1,81 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@model SessionViewModel
+
+<script>let sessionData = JSON.parse('@Json.Serialize(Model.Sessions)');</script>
+<partial name="~/Views/Shared/SideMenu.cshtml" />
+<div>
+    <h1>@localizer["Filter"]</h1>
+    <div id="filtercontainer">
+        <div id="form">
+            <div id="formcontainer">
+                <div class="filteroptionscontainer" id="weathercontainer" container>
+                    <h3>@localizer["Weather"]</h3>
+                    <select>
+                        <option>@localizer["Snow"]</option>
+                    </select>
+                    <div>
+                        <h4>@localizer["Wind speed"]</h4>
+                        <div class="inputdiv">
+                            <label for="windfrom">@localizer["From"]</label>
+                            <input id="windfrom" type="text" />
+                            <label for="windto">@localizer["To"]</label>
+                            <input id="windto" type="text" />
+                        </div>
+                    </div>
+                    <div>
+                        <h4>@localizer["Temperature"]</h4>
+                        <div class="inputdiv">
+                            <label for="tempfrom">@localizer["From"]</label>
+                            <input id="tempfrom" type="text" />
+                            <label for="tempto">@localizer["To"]</label>
+                            <input id="tempto" type="text" />
+                        </div>
+                    </div>
+                </div>
+                <div class="filteroptionscontainer" id="healthcontainer">
+                    <h3>@localizer["Health"]</h3>
+                    <div>
+                        <h4>@localizer["Heart rate"]</h4>
+                        <div class="inputdiv">
+                            <label for="heartrateinputfrom">@localizer["From"]</label>
+                            <input id="heartrateinputfrom" type="text" />
+                            <label for="heartrateinputto">@localizer["To"]</label>
+                            <input id="heartrateinputto" type="text" />
+                        </div>
+                    </div>
+                </div>
+                <div class="filteroptionscontainer" id="factorscontainer">
+                    <h3>@localizer["Factors"]</h3>
+                    <div id="selectposition">
+                        <span>@localizer["Prone"]</span>
+                        <input type="range" min="0" max="1" />
+                        <span>@localizer["Standing"]</span>
+                    </div>
+                </div>
+                <div class="filteroptionscontainer" id="dateandlocation">
+                    <div id="datecontainer">
+                        <h3>@localizer["Date"]</h3>
+                    </div>
+                    <div id="locationcontainer">
+                        <h3>@localizer["Location"]</h3>
+                        <select>
+                            <option value="Östersunds Skiddskyttestadion">Östersunds Skiddskyttestadion</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="FilterStuff()">Filter</button>
+        </div>
+        <div id="visualContainer">
+            <div>
+                <partial name="~/Views/Shared/Components/HeatMap/HeatMap.cshtml" />
+            </div>
+            <div id="chart">
+                <h2>@localizer["Hits_at_specific_heartrate"]</h2>
+                <partial name="~/Views/Shared/_FilterChart.cshtml" />
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/js/Filter.js"></script>

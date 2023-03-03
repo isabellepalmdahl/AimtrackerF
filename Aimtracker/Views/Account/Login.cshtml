@@ -1,0 +1,42 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@model LoginViewModel
+
+<partial name="~/Views/Shared/LoginHeader.cshtml" />
+<div>
+    <div>
+        @*hidden flex object*@
+    </div>
+    <div>
+
+        <h2 class="login-heading">@localizer["Login"]</h2>
+        <div class="login-container">
+            <form method="post" id="loginForm">
+                <div class="login-align">
+                    <div asp-validation-summary="All" class="text-danger"></div>
+                    <div>
+                        <label asp-for="Email">@localizer["Email"]</label>
+                        <input asp-for="Email" class="form-control" />
+                        <span asp-validation-for="Email" class="text-danger"></span>
+                    </div>
+                    <div>
+                        <label asp-for="Password">@localizer["Password"]</label>
+                        <input asp-for="Password" class="form-control" />
+                        <span asp-validation-for="Password" class="text-danger"></span>
+                    </div>
+                    <div>
+                        @* Another hidden flex object *@
+                    </div>
+                </div>
+            </form>
+            <div class="login-btn-container">
+                <button type="submit" form="loginForm" class="btn-login">@localizer["Login"]</button>
+
+                <form method="get" asp-action="Register">
+                    <button type="submit" class="btn-login">@localizer["Register"]</button>
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+</div>

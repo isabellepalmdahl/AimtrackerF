@@ -1,0 +1,27 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+<header id="side-menu">
+    <nav class="sidenav">
+
+        <div id="profile">
+            @await Component.InvokeAsync("Profile") 
+        </div>
+
+        <div id="sidemenuitems">
+            <a href="@Url.Action("Index", "Home",null)">@localizer["Overview"]</a>
+            <a href="@Url.Action("Filter", "Session",null)">@localizer["Filter session"]</a>
+            <a href="#">@localizer["Calender"]</a>
+            <a href="#">@localizer["Team"]</a>
+            <a href="#">@localizer["Training"]</a>
+            <div id="sidemenubuttons">
+                <form method="post" asp-controller="Account" asp-action="Logout">
+                    <button type="submit" class="btn-login">@localizer["Logout"]</button>
+                </form>
+
+                <div class="nav-item">
+                    @await Html.PartialAsync("_CulturePartial")
+                </div>
+            </div>
+        </div>
+        <img class="aimtrackerlogo" src="~/images/aimtracklogo.png" />
+    </nav>
+</header>

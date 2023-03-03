@@ -1,0 +1,14 @@
+﻿@inject Microsoft.AspNetCore.Mvc.Localization.IViewLocalizer localizer
+@model SessionViewModel
+
+    <canvas id="filterchart"></canvas>
+<script>
+
+let monthWithShootings = [];
+@foreach (var shooting in Model.MonthlyShootings)
+{
+    @: monthWithShootings.push(@shooting);
+}
+
+</script>
+<script src="~/js/FilterChart.js"></script>

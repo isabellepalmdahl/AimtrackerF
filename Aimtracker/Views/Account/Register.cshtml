@@ -1,0 +1,35 @@
+﻿@model RegisterViewModel
+
+<partial name="~/Views/Shared/LoginHeader.cshtml" />
+
+<h2 class="login-heading">Register</h2>
+<div class="login-container">
+
+
+    <form method="post" id="loginForm">
+        <div class="login-align">
+            <div asp-validation-summary="All" class="text-danger"></div>
+            <div>
+                <label asp-for="IbuId"></label>
+                <input asp-for="IbuId" class="form-control" />
+                <span asp-validation-for="IbuId" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Email"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="Password"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div>
+                <label asp-for="ConfirmPassword"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn-login">Register account</button>
+        </div>
+    </form>
+</div>
